@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Chat Navigation</title>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="sidebar-header">
+        <h1>Chats</h1>
+    </div>
+    <div class="chat-list">
+        <div class="chat" onclick="openChat('chat1')">Chat 1</div>
+        <div class="chat" onclick="openChat('chat2')">Chat 2</div>
+        <!-- Adaugă aici câte chaturi dorești -->
+    </div>
+</div>
+
+<div class="chat-box-container">
+    <div class="chat-box" id="chat1">
+        <div class="chat-header">
+            <span class="close-btn" onclick="closeChat('chat1')">❌</span>
+            <h2 id="chat1-header">Chat 1 - <span id="chat1-username"></span></h2>
+        </div>
+        <div class="chat-messages">
+            <!-- Aici vor apărea mesajele pentru Chat 1 -->
+        </div>
+        <div class="user-input">
+            <input type="text" placeholder="Type a message..." class="message-input">
+            <button onclick="sendMessage('chat1')">Send</button>
+        </div>
+    </div>
+
+    <div class="chat-box" id="chat2">
+        <div class="chat-header">
+            <span class="close-btn" onclick="closeChat('chat2')">❌</span>
+            <h2>Chat 2</h2>
+        </div>
+        <div class="chat-messages">
+            <!-- Aici vor apărea mesajele pentru Chat 2 -->
+        </div>
+        <div class="user-input">
+            <input type="text" placeholder="Type a message..." class="message-input">
+            <button onclick="sendMessage('chat2')">Send</button>
+        </div>
+    </div>
+</div>
+
+<div class="username-form">
+    <input type="text" id="username" placeholder="Introduceți numele de utilizator">
+    <button onclick="connectUser()">Conectează-te</button>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
